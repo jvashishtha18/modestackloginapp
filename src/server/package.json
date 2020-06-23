@@ -1,0 +1,32 @@
+{
+  "name": "application",
+  "version": "1.0.0",
+  "description": "MEAN Stack with Angular",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvashishtha18/modestackloginapp.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Stack",
+    "Angular",
+    "Application"
+  ],
+  "author": "jyoti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvashishtha18/modestackloginapp/issues"
+  },
+  "homepage": "https://github.com/jvashishtha18/modestackloginapp#readme",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.19"
+  }
+}

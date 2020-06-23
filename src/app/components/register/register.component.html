@@ -1,0 +1,108 @@
+<section>
+  <div class="container">
+
+    <div class="heading">
+      <h2>Register Form </h2>
+    </div>
+    <form  [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value)"  novalidate>
+        <div class="form-group">
+            <label for="name">name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"
+            [class.is-invalid]="Name.invalid && Name.touched"
+            formControlName="name" required>
+            <div *ngIf="Name.invalid && Name.touched">
+                <small *ngIf="Name.errors?.required" class="text-danger">Name is required</small>
+                <small *ngIf="Name.errors?.maxlength" class="text-danger">Name is invaild</small>
+               </div>
+          </div>
+        <div class="form-group">
+          <label for="uname">username:</label>
+          <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname"
+          [class.is-invalid]="UserName.invalid && UserName.touched"
+          formControlName="uname" required>
+          <div *ngIf="UserName.invalid && UserName.touched">
+            <small *ngIf="UserName.errors?.required" class="text-danger">UserName is required</small>
+            <small *ngIf="UserName.errors?.maxlength" class="text-danger">UserName is invaild</small>
+           </div>
+        </div>
+        <div class="form-group">
+          <label for="pwd">password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+          [class.is-invalid]="Password.invalid && Password.touched"
+          formControlName="pswd" required>
+          <div *ngIf="Password.invalid && Password.touched">
+            <small *ngIf="Password.errors?.required " class="text-danger">Password is required</small>
+            <small *ngIf="Password.errors?.minlength" class="text-danger">Password is invaild(min length should be 8)</small>
+            <small *ngIf="Password.errors?.max1length" class="text-danger">Password is invaild(max length should be 12)</small>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="email">email:</label>
+            <input type="email"  [class.is-invalid]="Email.invalid && Email.touched "
+            class="form-control" class="form-control" id="email" placeholder="Enter you email id" name="email"
+            formControlName="email" required>
+            <div *ngIf="Email.invalid && Email.touched">
+                <small *ngIf="Email.errors?.required" class="text-danger">Email is required</small>
+                <small *ngIf="Email.errors?.email" class="text-danger">Email is invaild</small>
+               </div>
+          </div>
+          <div formGroupName="address">
+          <div class="form-group">
+            <label for="address">address:</label>
+            <input type="text" class="form-control" id="street" placeholder="Enter the street" name="street"
+            [class.is-invalid]="Street.invalid && Street.touched"
+            formControlName="street" required>
+            <input type="text" class="form-control" id="suite" placeholder="Enter the suite" name="suite"
+            [class.is-invalid]="Suite.invalid && Suite.touched"
+            formControlName="suite" required>
+            <input type="text" class="form-control" id="city" placeholder="Enter the city" name="city" 
+            [class.is-invalid]="City.invalid && City.touched"
+            formControlName="city"required>
+            <input type="telephone" class="form-control" id="zipcode" placeholder="Enter the zipcode" name="zipcode"
+            [class.is-invalid]="Zipcode.invalid && Zipcode.touched"
+            formControlName="zipcode" required>
+            <div formGroupName="geo">
+            <span >
+                <label for="geo">geo:</label>
+            <input type="number" class="form-control" id="lat" placeholder="Enter the lat" name="lat"
+            [class.is-invalid]="Lat.invalid && Lat.touched"
+            formControlName="lat" required>
+            <input type="number" class="form-control" id="lng" placeholder="Enter the lng" name="lng"
+            [class.is-invalid]="Lng.invalid && Lng.touched"
+            formControlName="lng" required>
+            </span>
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">phone:</label>
+            <input type="telephone" class="form-control" id="phone" placeholder="Enter your phone number" name="phone"
+            [class.is-invalid]="Phone.invalid && Phone.touched"
+            formControlName="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="website">website:</label>
+            <input type="email" class="form-control" id="website" placeholder="Enter your websiter" name="website" 
+            [class.is-invalid]="Website.invalid && Website.touched"
+            formControlName="website"required>
+          </div>
+          <div formGroupName="company">
+          <div class="form-group">
+            <label for="company">company:</label>
+            <input type="text" class="form-control" id="cname" placeholder="Enter your company name" name="name"
+            [class.is-invalid]="Cname.invalid && Cname.touched"
+            formControlName="name" required>
+            <input type="text" class="form-control" id="catchPhrase" placeholder="Enter the catchPhrase" name="catchPhrase"
+            [class.is-invalid]="CatchPhrase.invalid && CatchPhrase.touched"
+            formControlName="catchPhrase" required>
+            <input type="text" class="form-control" id="bs" placeholder="Enter the bs" name="bs"
+            [class.is-invalid]="Bs.invalid && Bs.touched"
+            formControlName="bs" required>
+          </div>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    
+  
+  </div>
+</section>

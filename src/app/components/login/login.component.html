@@ -1,0 +1,41 @@
+<section>
+    <div class="container">
+      <p class="h4 text-center"><i class="ion email"></i>Login</p>
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <div class="form-group">
+          <label for="uname">Username:</label>
+          <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname"
+          [class.is-invalid]="username.invalid && username.touched "
+          formControlName="uname" required>
+          <div *ngIf="username.invalid && username.touched">
+            <small *ngIf="username.errors?.required" class="text-danger">username is required</small>
+            <small *ngIf="username.errors?.minlength" class="text-danger">username is invalid </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+          [class.is-invalid]="password.invalid && password.touched"
+            formControlName="pswd" required>
+                <div *ngIf="password.invalid && password.touched">
+            <small *ngIf="password.errors?.required" class="text-danger" >password is required</small>
+            <small *ngIf="password.errors?.minlength"class="text-danger" >password is invalid </small>
+            <small *ngIf="password.errors?.maxlength" class="text-danger">password is invalid </small>
+          </div>
+        </div>
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="remember" formControlName="remember" required> I agree
+            on the Terms and Condtions.
+          </label>
+            <div *ngIf="remember.invalid && submitted">
+              <small  class="text-danger" >Please Accept The Term And Condition</small>
+              </div>
+          </div>
+        <button [disabled]="!loginForm.valid || submitted " type="submit" color="primary" class="btn btn-primary">Submit</button>
+        <p>
+          Don't have account yet? <a href="/register">Sign up</a>
+        </p>
+      </form>
+    </div>
+  </section>
